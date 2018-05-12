@@ -1,0 +1,16 @@
+{% extends "wtfeg2_base.html" %} {% block body %}
+<h1>Login</h1>
+<form method="post"> {# Default action to the same page #}
+    <!-- {{ form.hidden_tag() }} {# Renders all hidden fields including CSRF #} -->
+    {{ form.csrf_token }} {% for field in form if field.widget.input_type != 'hidden' %} {# Display field #}
+    <div class="field">
+        {{ field.label }} {{ field }}
+    </div>
+    {# Display field validation error message if any #} {% if field.errors %} {% for error in field.errors %}
+    <div class="field_error">{{ error }}</div>
+    {% endfor %} {% endif %} {% endfor %}
+    <input type="submit" value="GO">
+</form>
+{% endblock %}
+
+

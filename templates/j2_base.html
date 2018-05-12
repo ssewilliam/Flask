@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% block head_section %}
+        <link rel="stylesheet" href="/static/css/style.css">
+        <title>{% block title %}{% endblock %} - ABC Corp</title>
+    {% endblock %}    
+</head>
+<body>
+    <header id="header">
+        {% block header %}{% endblock %}
+    </header>
+    <div id="content">
+         {% block content %}{% endblock %}
+    </div>
+    <footer id="footer">
+         {% block footer %} &copy; Copyright 2018 ABC Corp. {% endblock %}
+    </footer>
+</body>
+</html>
