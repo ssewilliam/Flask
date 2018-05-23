@@ -1,0 +1,10 @@
+app = Flask(__name__)  # Create a Flask app instance
+db = SQLAlchemy()      # Initialize the Flask-SQLAlchemy extension instance
+db.init_app(app)       # Register with Flask app
+
+# Setup models
+with app.app_context():   
+    # Create an app context, which contains the necessary name-object bindings 
+    # The with-statement automatically pushes on entry
+    db.create_all()   # run under the app context
+    # The with-statement automatically pops on exit
